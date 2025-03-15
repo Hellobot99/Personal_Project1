@@ -1,0 +1,60 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.ktj4060'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+// Swagger 의존성 (springdoc-openapi)
+
+implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+// JSP 관련 의존성
+
+implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
+implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
+implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0'
+
+implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
+
+// Spring Boot 및 MyBatis 의존성
+
+implementation 'org.springframework.boot:spring-boot-starter-security'
+
+implementation 'org.springframework.boot:spring-boot-starter-web'
+
+implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+// MySQL Connector
+
+runtimeOnly 'com.mysql:mysql-connector-j'
+
+// 테스트 관련 의존성
+
+testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+
+testImplementation 'org.springframework.security:spring-security-test'
+
+testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
