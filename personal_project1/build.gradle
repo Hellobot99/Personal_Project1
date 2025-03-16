@@ -18,6 +18,9 @@ repositories {
 }
 
 dependencies {
+implementation 'org.springframework.boot:spring-boot-starter-logging'
+developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 // Swagger 의존성 (springdoc-openapi)
 
 implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
