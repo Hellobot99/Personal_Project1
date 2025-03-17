@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>로그인페이지</title>
+    <link rel="stylesheet"type="text/css"href="${pageContext.request.contextPath}/resources/css/login/style.css">
 </head>
 <body>
 	
@@ -11,7 +12,8 @@
 	 <div id = "login-container-wrapper">
 		<div id = "login-container">
 			<h2>로그인</h2>
-			<form action = "${pageContext.request.contextPath}/login"method="post'>
+			<form action = "${pageContext.request.contextPath}/login"method="post">
+				<input type = "hidden"name="_csrf"value="${_csrf.token}">
 				<div class = "input-group">
 					<label for = "username">아이디</label>
 					<input type = "text" id="username"name="username" required/>
@@ -23,7 +25,7 @@
 				<button type = "submit" id = "login-button">로그인</button>
 			</form>
 			<div id = "register-link">
-				<a href= "${pageContext.request.contextPath}/register">회원가입</a>
+				<a href= "${pageContext.request.contextPath}/registerPage">회원가입</a>
 
 			</div>
 		</div>		
